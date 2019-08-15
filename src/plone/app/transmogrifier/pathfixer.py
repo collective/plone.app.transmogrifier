@@ -3,6 +3,7 @@ from collective.transmogrifier.interfaces import ISection
 from collective.transmogrifier.interfaces import ISectionBlueprint
 from collective.transmogrifier.utils import Matcher
 from collective.transmogrifier.utils import defaultKeys
+from Products.CMFPlone.utils import safe_unicode
 from zope.interface import provider
 from zope.interface import implementer
 
@@ -59,7 +60,6 @@ class PathFixer(object):
             if prependstring:
                 path = '%s%s' % (prependstring, path)
 
-            # convert the path to str and remove invalid characters
-            item[pathkey] = path.encode('ascii', 'ignore')
+            item[pathkey] = safe_unicode(path)
 
             yield item
