@@ -74,12 +74,15 @@ class ATSchemaUpdaterSection(object):
             if IBaseObject.providedBy(obj):
                 changed = False
                 is_new_object = obj.checkCreationFlag()
-                for k, v in item.iteritems():
+                keys = item.keys()
+                keys.sort()
+                for k in keys:
                     if k.startswith('_'):
                         continue
                     field = obj.getField(k)
                     if field is None:
                         continue
+                    v = item[k]
                     if not _compare(get(field, obj), v):
                         set(field, obj, v)
                         changed = True
