@@ -4,6 +4,10 @@ Changelog
 1.4.2 (unreleased)
 ------------------
 
+- ``plone.app.transmogrifier.atschemaupdater`` updates fields in fixed order
+  (field names) for bette debuggability.
+  [gotcha]
+
 - ``plone.app.transmogrifier.pathfixer`` now also converts a path into ``str`` and removes any invalid characters from it;
   this avoids ``UnicodeEncodeError`` in many blueprint sections.
   [hvelarde]
