@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.4.2 (unreleased)
+1.4.2 (2019-09-24)
 ------------------
 
 - ``plone.app.transmogrifier.atschemaupdater`` updates fields in fixed order
