@@ -26,17 +26,17 @@ def _compare(fieldval, itemval):
 
 
 def get(field, obj):
-    if getattr(field, 'getAccessor', False):
+    if getattr(field, 'getAccessor', False) and field.getAccessor(obj):
         return field.getAccessor(obj)()
-    elif field.accessor is not None:
+    elif field.accessor is not None and getattr(obj, field.accessor, None):
         return getattr(obj, field.accessor)()
     return field.get(obj)
 
 
 def set(field, obj, val):
-    if getattr(field, 'getMutator', False):
+    if getattr(field, 'getMutator', False) and field.getMutator(obj):
         field.getMutator(obj)(val)
-    elif field.mutator is not None:
+    elif field.mutator is not None and getattr(obj, field.mutator, None):
         getattr(obj, field.mutator)(val)
     else:
         field.set(obj, val)

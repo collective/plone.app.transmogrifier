@@ -4,7 +4,9 @@ Changelog
 1.4.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- ``plone.app.transmogrifier.atschemaupdater`` should be more robust when
+  trying to use accessor or mutator.
+  [gotcha]
 
 
 1.4.2 (2019-09-24)
