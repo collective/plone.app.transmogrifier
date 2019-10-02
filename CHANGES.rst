@@ -11,7 +11,7 @@ Changelog
 ------------------
 
 - ``plone.app.transmogrifier.atschemaupdater`` updates fields in fixed order
-  (field names) for bette debuggability.
+  (field names) for better debuggability.
   [gotcha]
 
 - ``plone.app.transmogrifier.pathfixer`` now also converts a path into ``str`` and removes any invalid characters from it;
